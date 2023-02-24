@@ -12,11 +12,11 @@ public class Main {
         System.out.println(str);
         String[] splited = str.split("\\s+");
         //Map<String, Integer> res = new HashMap<String, Integer>();
-        Map[] res;
-        for (String word : splited) {
-            res = main.calculateLength(word);
-        }
-        System.out.format("In the string above there are %s words with maxim length of %s chars.", res.get("words"), res.get("length"));
+//        Map[] res;
+//        for (String word : splited) {
+//            res = main.calculateLength(word);
+//        }
+//        System.out.format("In the string above there are %s words with maxim length of %s chars.", res.get("words"), res.get("length"));
     }
 
     private Map[] calculateLength(String word) {

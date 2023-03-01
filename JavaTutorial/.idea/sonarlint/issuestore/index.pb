@@ -9,3 +9,9 @@ F
 src/firstApp/Main.java,7\0\708bc5c83b8d84c97a0b011560f14cc0ae3df894
 G
 src/exercises/Main.java,b\9\b9eedad77fadf1bf15c7464c5ff38ecebdd6226f
+N
+src/controlFlow/BlackJack.java,9\4\94499964971fc8e5f3372c3cbfc02efeebe8b589
+L
+src/controlFlow/GuessIt.java,0\4\040f96d634d42f7ebc8412a4a627c2cc4d72c618
+T
+$src/controlFlow/PatternMatching.java,e\5\e56035eb4de5f5b976750fba924a95bbb3a9ab8a

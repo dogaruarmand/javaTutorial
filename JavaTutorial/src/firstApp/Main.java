@@ -1,7 +1,7 @@
 package firstApp;
 
-import model.Dog;
-import model.Person;
+import firstApp.model.Dog;
+import firstApp.model.Person;
 
 import java.time.LocalDate;
 

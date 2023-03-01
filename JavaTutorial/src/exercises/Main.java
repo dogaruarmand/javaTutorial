@@ -1,9 +1,9 @@
 package exercises;
 
-import finance.extern.Customer;
-import finance.intern.Bank;
-import finance.intern.BankManager;
-import person.Person;
+import exercises.finance.extern.Customer;
+import exercises.finance.intern.Bank;
+import exercises.finance.intern.BankManager;
+import exercises.person.Person;
 
 public class Main {
     public static void main(String[] args) {

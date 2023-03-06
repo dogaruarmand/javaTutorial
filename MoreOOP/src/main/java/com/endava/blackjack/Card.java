@@ -32,7 +32,14 @@ public class Card {
     public static void main(String[] args) {
         Card card1 = new Card(Suit.CLUBS, Rank.JACK);
         Card card2 = new Card(Suit.DIAMONDS, Rank.TEN);
-//        int total = card1.plus(card2);
+        // int total = card1.plus(card2);
+        // Hand myHand = new Hand();
+        // myHand.add(card1);
+        // myHand.add(card2);
+        // int total = myHand.getTotal();
+    }
 
+    public int getValue() {
+        return this.rank.getValue();
     }
 }

@@ -9,16 +9,44 @@ public class GuessingGame {
         counter++;
         String tryText = counter == 1 ? "try" : "tries";
         String winningMsg = String.format("You got it in %d %s", counter, tryText);
+        String response = null;
 
         if (counter == 4 && guessedNumber != getRandomNumber()) {
-            return String.format("You didn't get it and you've had %d %s. Game Over.", counter, tryText);
+            response =  String.format("You didn't get it and you've had %d %s. Game Over.", counter, tryText);
         } else if (counter > 4) {
-            return "Sorry, you are limited to only 4 tries. Your game is over.";
+            response =  "Sorry, you are limited to only 4 tries. Your game is over.";
+        } else {
+            String toHighLowText = null;
+            if (guessedNumber < getRandomNumber()) {
+                toHighLowText = "- you're too low";
+            } else if (guessedNumber > getRandomNumber()) {
+                toHighLowText = "- you're too high";
+            } else {
+                toHighLowText  = "";
+            }
+            String loseText = String.format("You didn't get it %s", toHighLowText).trim();
+            response = guessedNumber == getRandomNumber() ? winningMsg : loseText;
         }
-        return guessedNumber == getRandomNumber() ? winningMsg : "You didn't get it";
+        return response;
     }
 
     public int getRandomNumber() {
         return randomNumber;
+    }
+
+    public static void main(String[] args) {
+        GuessingGame game = new GuessingGame();
+        boolean loopShouldContinue = true;
+        do {
+            String input = System.console().readLine("Enter a number: ");
+            if ("q".equals(input)) {
+                return;
+            }
+            String output = game.guess(Integer.parseInt(input));
+            System.out.println(output);
+            if (output.contains("You got it") || output.contains("over")) {
+                loopShouldContinue = false;
+            }
+        } while (loopShouldContinue);
     }
 }

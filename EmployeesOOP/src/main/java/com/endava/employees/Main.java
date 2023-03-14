@@ -1,6 +1,7 @@
 package com.endava.employees;
 
 import java.text.NumberFormat;
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 
 public class Main {
@@ -37,15 +38,40 @@ public class Main {
 
         Matcher peopleMat = Employee.PEOPLE_PAT.matcher(peopleText);
 
+//        Flyer flyer = new CEO("Rubble, Betty, 4/4/1915, CEO, {avgStockPrice=300}");
+//        flyer.fly();
+
+//        Programmer coder = new Programmer("");
+//        coder.cook("hamburger");
+
         int totalSallaries = 0;
-        Employee employee = null;
+        IEmployee employee = null;
         while (peopleMat.find()){
             String details = peopleMat.group("details");
             employee = Employee.createEmployee(peopleMat.group());
+//            if (employee instanceof Programmer){
+//                System.out.println(((Programmer) employee).getIq());
+//            }else if (employee.getClass().equals(Manager.class)) {
+//                System.out.println();
+//            } else {
+//                System.out.println("Default");
+//            }
             System.out.println(employee.toString());
             totalSallaries+= employee.getSalary();
         }
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total pay out should be %s%n", currencyInstance.format(totalSallaries));
+
+        /**
+         * weirdo is a record that is like a final class, with constructor in the definition.
+         * getter is calling recordname.fieldsname()
+         * doesn't have setter
+         * can't extend a class
+         */
+//        Weirdo larry = new Weirdo("David", "Larry", LocalDate.of(1950, 1, 1));
+//        System.out.println(larry.lastName());
+//
+//        Weirdo jake = new Weirdo("Snake", "Jake");
+//        jake.sayHello();
     }
 }

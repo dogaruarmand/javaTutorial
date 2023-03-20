@@ -2,6 +2,10 @@ package com.endava.employees;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Matcher;
 
 public class Main {
@@ -46,18 +50,52 @@ public class Main {
 
         int totalSallaries = 0;
         IEmployee employee = null;
+        List<IEmployee> employees = new ArrayList<>();
         while (peopleMat.find()){
             String details = peopleMat.group("details");
             employee = Employee.createEmployee(peopleMat.group());
-//            if (employee instanceof Programmer){
-//                System.out.println(((Programmer) employee).getIq());
-//            }else if (employee.getClass().equals(Manager.class)) {
-//                System.out.println();
-//            } else {
-//                System.out.println("Default");
+            employees.add(employee);
+//            System.out.println(employee.toString());
+//            totalSallaries+= employee.getSalary();
+        }
+
+//        employees.get(0); // first person from the collection
+
+//        List<String> undesirables = List.of("Wilma5", "Barney4", "Fred2");
+//        List<String> undesirables = new ArrayList();
+//        undesirables.add("Wilma5");
+//        undesirables.add("Barney4");
+//        undesirables.add("Fred2");
+
+//        IEmployee myEmp = employees.get(5);
+////        System.out.println(myEmp);
+//        System.out.println(employees.contains(myEmp));
+//
+//        IEmployee employee1 = Employee.createEmployee("Flinstone5, Fred5, 1/1/1900, Programmer, {locpd=5,yoe=10,iq=100}");
+//        System.out.println(employee1);
+//        System.out.println(employees.contains(employee1));
+//
+//        System.out.println(myEmp.equals(employee1));
+
+        /**
+         * this loop is used to remove elements from collections while iterate
+         */
+//        removeUndesirables(employees, undesirables);
+//
+//        sort employes collections
+//        employees.sort(new Comparator<IEmployee>() {
+//            @Override
+//            public int compare(IEmployee o1, IEmployee o2) {
+//                if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2 ){
+//                    return emp1.lastName.compareTo(emp2.lastName);
+//                }
+//                return 0;
 //            }
-            System.out.println(employee.toString());
-            totalSallaries+= employee.getSalary();
+//        });
+
+        for (IEmployee worker : employees) {
+            System.out.println(worker.toString());
+            totalSallaries+= worker.getSalary();
         }
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total pay out should be %s%n", currencyInstance.format(totalSallaries));
@@ -74,4 +112,15 @@ public class Main {
 //        Weirdo jake = new Weirdo("Snake", "Jake");
 //        jake.sayHello();
     }
+
+//    private static void removeUndesirables(List<IEmployee> employees, List<String> removalNames) {
+//        for (Iterator<IEmployee> it = employees.iterator(); it.hasNext();) {
+//            IEmployee worker = it.next();
+//            if (worker instanceof Employee tmpWorker) {
+//                if(removalNames.contains(tmpWorker.firstName)) {
+//                    it.remove();
+//                }
+//            }
+//        }
+//    }
 }

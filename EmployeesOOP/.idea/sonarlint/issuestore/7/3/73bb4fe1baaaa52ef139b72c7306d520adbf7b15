@@ -1,0 +1,19 @@
+
+E
+java:S1066w"/Merge this if statement with the enclosing one.(ö°ð¿
+C
+java:S1604U"(Make this anonymous inner class a lambda(ÿ¼©Âÿÿÿÿÿ
+Q	java:S125-"<This block of commented-out lines of code should be removed.(ÿšûÄ
+V	java:S1250"<This block of commented-out lines of code should be removed.(å¶ü¡üÿÿÿÿ
+Q	java:S125:"<This block of commented-out lines of code should be removed.(ú×œ˜
+Q	java:S125A"<This block of commented-out lines of code should be removed.(þ«ª
+V	java:S125F"<This block of commented-out lines of code should be removed.(Ì½âùÿÿÿÿ
+V	java:S125S"<This block of commented-out lines of code should be removed.(…ú§Üøÿÿÿÿ
+V	java:S125c"<This block of commented-out lines of code should be removed.(Ÿ×ÜÜþÿÿÿÿ
+V	java:S125l"<This block of commented-out lines of code should be removed.(Žî¤ûÿÿÿÿ
+I
+java:S1128"3Remove this unused import 'java.text.NumberFormat'.(¿¸ž»
+K
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿ
+L
+java:S1144s"7Remove this unused private "removeUndesirables" method.(¿²§8

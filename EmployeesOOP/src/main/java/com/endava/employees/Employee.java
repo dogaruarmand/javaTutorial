@@ -3,6 +3,7 @@ package com.endava.employees;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,7 +45,8 @@ public abstract class Employee implements IEmployee {
                 default -> () -> 0; // lambda expression
             };
         } else {
-            return new DummyEmployee();
+//            return new DummyEmployee();
+            return new Programmer(employeeText);
         }
     }
 
@@ -57,6 +59,18 @@ public abstract class Employee implements IEmployee {
     @Override
     public String toString() {
         return String.format("%s, %s: %s - %s", lastName, firstName, moneyFormat.format(getSalary()), moneyFormat.format(getBonus()));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+        return lastName.equals(employee.lastName) && firstName.equals(employee.firstName) && dob.equals(employee.dob);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lastName, firstName, dob);
     }
 
     private static final class DummyEmployee extends Employee {

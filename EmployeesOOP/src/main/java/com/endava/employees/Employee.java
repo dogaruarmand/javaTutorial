@@ -41,12 +41,12 @@ public abstract class Employee implements IEmployee {
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
-//                default -> new DummyEmployee();
-                default -> () -> 0; // lambda expression
+                default -> new DummyEmployee();
+//                default -> () -> 0; // lambda expression
             };
         } else {
-//            return new DummyEmployee();
-            return new Programmer(employeeText);
+            return new DummyEmployee();
+//            return new Programmer(employeeText);
         }
     }
 
@@ -78,5 +78,16 @@ public abstract class Employee implements IEmployee {
         public int getSalary() {
             return 0;
         }
+    }
+
+    /**
+     * this method is used to compare last name for TreeSet
+     * @param o the object to be compared.
+     * @return
+     */
+    @Override
+    public int compareTo(IEmployee o) {
+        Employee other = (Employee) o;
+        return this.firstName.compareTo(other.firstName);
     }
 }

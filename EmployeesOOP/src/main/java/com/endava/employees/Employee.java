@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public abstract class Employee implements IEmployee {
     protected final DateTimeFormatter dtFormater = DateTimeFormatter.ofPattern("M/d/yyyy");
     protected final NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
-    private final static String PEOPLE_REGEX = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
+    private final static String PEOPLE_REGEX = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})";
     protected final static Pattern PEOPLE_PAT = Pattern.compile(PEOPLE_REGEX);
     protected final Matcher peopleMat;
     protected String lastName;
@@ -37,16 +37,14 @@ public abstract class Employee implements IEmployee {
         Matcher peopleMat = Employee.PEOPLE_PAT.matcher(employeeText);
         if (peopleMat.find()) {
             return switch (peopleMat.group("role")) {
-                case "Programmer" -> new Programmer(employeeText); // access entire line group without name
+                case "Programmer" -> new Programmer(employeeText);
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
                 default -> new DummyEmployee();
-//                default -> () -> 0; // lambda expression
             };
         } else {
             return new DummyEmployee();
-//            return new Programmer(employeeText);
         }
     }
 
@@ -54,6 +52,22 @@ public abstract class Employee implements IEmployee {
 
     public double getBonus() {
         return getSalary() * 1.10;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     @Override

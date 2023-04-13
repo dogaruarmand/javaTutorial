@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.endava.database.repository.PeopleRepositoryTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-04-12T12:32:58" hostname="EN1310916" time="0.609">
+  <properties/>
+  <testcase name="testPersonIdNotFound()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.419"/>
+  <testcase name="canDelete()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.048"/>
+  <testcase name="canFindPersonById()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.019"/>
+  <testcase name="canSaveTwoPeople()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.019"/>
+  <testcase name="canUpdate()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.021"/>
+  <testcase name="canDeleteMultiplePeople()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.021"/>
+  <testcase name="canGetCount()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.015"/>
+  <testcase name="canSaveOnePerson()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.017"/>
+  <testcase name="canFindAll()" classname="com.endava.database.repository.PeopleRepositoryTests" time="0.022"/>
+  <system-out><![CDATA[Person{firstName='John', lastName='Smith', dob=1980-11-15T12:15Z, id=721, salary=0}
+Records affected: 1
+1
+Person{firstName='test', lastName='jackson', dob=2023-04-12T12:32:58.830461200Z, id=722, salary=0}
+Records affected: 1
+Person{firstName='John', lastName='Smith', dob=1980-11-15T12:15Z, id=723, salary=0}
+Records affected: 1
+Person{firstName='Bobby', lastName='Smith', dob=1982-09-15T12:13Z, id=724, salary=0}
+Records affected: 1
+Person{firstName='John11', lastName='Smith', dob=1980-11-15T12:15Z, id=725, salary=0}
+Records affected: 1
+Person{firstName='John11', lastName='Smith', dob=1980-11-15T12:15Z, id=726, salary=0}
+Records affected: 1
+Person{firstName='John22', lastName='Smith', dob=1980-11-15T12:15Z, id=727, salary=0}
+Records affected: 1
+2
+Person{firstName='Bob', lastName='Smith', dob=1982-09-15T12:13Z, id=728, salary=0}
+Records affected: 1
+Person{firstName='Bob2', lastName='Smith', dob=1982-09-15T12:13Z, id=729, salary=0}
+Records affected: 1
+Person{firstName='John', lastName='Smith', dob=1980-11-15T12:15Z, id=730, salary=0}
+Records affected: 1
+Person{firstName='John', lastName='Smith', dob=1982-09-15T12:13Z, id=731, salary=0}
+Records affected: 1
+Person{firstName='John1', lastName='Smith', dob=1982-09-15T12:13Z, id=732, salary=0}
+Records affected: 1
+Person{firstName='John2', lastName='Smith', dob=1982-09-15T12:13Z, id=733, salary=0}
+Records affected: 1
+Person{firstName='John3', lastName='Smith', dob=1982-09-15T12:13Z, id=734, salary=0}
+Records affected: 1
+Person{firstName='John4', lastName='Smith', dob=1982-09-15T12:13Z, id=735, salary=0}
+Records affected: 1
+Person{firstName='John5', lastName='Smith', dob=1982-09-15T12:13Z, id=736, salary=0}
+Records affected: 1
+Person{firstName='John6', lastName='Smith', dob=1982-09-15T12:13Z, id=737, salary=0}
+Records affected: 1
+Person{firstName='John7', lastName='Smith', dob=1982-09-15T12:13Z, id=738, salary=0}
+Records affected: 1
+Person{firstName='John8', lastName='Smith', dob=1982-09-15T12:13Z, id=739, salary=0}
+Records affected: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
